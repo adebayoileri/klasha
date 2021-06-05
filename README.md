@@ -16,7 +16,7 @@ yarn start
 ### compiles and executes code for production
 
 ```
-npm run deploy
+yarn run deploy
 ```
 
 ### Author 
