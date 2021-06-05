@@ -1,0 +1,38 @@
+.k-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: inherit;
+  color: $color-black-1;
+}
+
+.k-th {
+  padding: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  background-color: $color-grey-1;
+}
+
+.k-tr {
+  padding: 1.4rem;
+  text-align: center;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-grey-3;
+  margin: 1.5rem 0;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.k-tr:hover:not(:first-child) {
+  border: none;
+  box-shadow: 0 0.2rem 3rem rgba($color-black, 0.08);
+  border: 2px solid $color-primary;
+  transform: scale(1.0005);
+  overflow: hidden;
+}
+
+.k-td {
+  text-align: center;
+  padding: 1.4rem;
+}

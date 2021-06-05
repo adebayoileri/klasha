@@ -1,0 +1,101 @@
+.datatable {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: $color-white;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include respond(mobile) {
+      height: 10rem;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    font-family: "Space Grotesk";
+    color: $color-black-1;
+    font-weight: 700;
+    line-height: 1.4;
+    font-size: 1.8rem;
+  }
+
+  &__action {
+    display: flex;
+    flex: 0 0 50%;
+    align-items: center;
+    justify-content: space-between;
+
+    @include respond(mobile) {
+      flex: 1;
+      width: 100%;
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    width: 22rem;
+
+    @include respond(phone) {
+      width: 18rem;
+    }
+    @include respond(phone) {
+      width: 16rem;
+    }
+  }
+  &__search-icon,
+  &__calendar-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__search input,
+  &__date-picker input {
+    outline: none;
+    width: 100%;
+    margin-right: -3rem;
+    border: none;
+    font-weight: 400;
+    font-size: 1.4rem;
+    border: 1px solid $color-grey-3;
+    border-radius: 4px;
+    font-family: "Founders Grotesk";
+    padding: 1rem 2rem 1rem 1.4rem;
+  }
+  &__search input::-webkit-input-placeholder {
+    color: $color-grey-2;
+    font-size: 1.4rem;
+  }
+
+  &__date-picker {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    font-family: inherit;
+    width: 12rem;
+
+    border: none;
+    outline: none;
+    font-size: 1.4rem;
+  }
+
+  &__content {
+    width: 100%;
+    margin-top: 1.4rem;
+  }
+  &-next {
+    width: 100%;
+    margin: 1.4rem 0;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-align: center;
+    color: $color-primary;
+    border: 1px solid $color-grey-3;
+    cursor: pointer;
+  }
+}

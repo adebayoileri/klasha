@@ -1,0 +1,86 @@
+.navigation {
+  display: flex;
+  flex: 0 0 19.5%;
+  display: flex;
+  background: rgba($color-grey-1, 0.6);
+  backdrop-filter: blur(20px);
+  flex-direction: column;
+  overflow-y: auto;
+
+  &__logo {
+    align-items: center;
+    padding: $default-padding;
+  }
+
+  &__header {
+    font-family: "Space Grotesk";
+    color: $color-black-1;
+    text-decoration: none;
+    padding-left: $default-padding;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+    line-height: 1.5;
+    cursor: text;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  &__item {
+    list-style: none;
+    line-height: 0.8;
+    font-size: 1.4rem;
+    font-weight: 400;
+    align-self: stretch;
+    padding: 1.2rem $default-padding;
+    margin: 0.3rem 0;
+    cursor: pointer;
+
+    & a {
+      display: flex;
+      text-decoration: none;
+      color: $color-grey-2;
+      align-items: center;
+    }
+  }
+  &__item--dashboard {
+    background: $color-white;
+    color: $color-grey-2;
+  }
+  &__item--active {
+    background: $color-grey-1;
+    font-weight: 600;
+  }
+  &__item:hover {
+    background: $color-grey-1;
+  }
+  &__item:hover a,
+  &__item--active a {
+    color: $color-black-1;
+  }
+
+  &__icon {
+    margin-right: 1.2rem;
+  }
+  
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.mobile-sidebar {
+  display: none;
+  width: 35%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  height: 100%;
+  animation: slideIn 0.4s cubic-bezier(1, 0, 0, 1) forwards;
+  @include respond(mobile) {
+    width: 65%;
+  }
+}

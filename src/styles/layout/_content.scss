@@ -1,0 +1,253 @@
+.section-main,
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.content {
+  background-color: $color-white;
+  margin: $default-padding;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 4rem;
+  }
+  &__info-page {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: "Space Grotesk";
+  }
+  &__info-date {
+    font-size: 1.4rem;
+    color: $color-grey-2;
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__actions-notification,
+  &__actions-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 3.8rem;
+    height: 3.8rem;
+    cursor: pointer;
+  }
+  &__actions-notification {
+    position: relative;
+    background: $color-grey-1;
+    border: 1px solid $color-grey-1;
+    margin-right: 1rem;
+  }
+  &__actions-avatar {
+    background: rgba($color-light-red, 0.1);
+    border: 1px solid $color-light-red;
+  }
+  &__actions-avatar img {
+    width: 2.5rem;
+    height: 3rem;
+  }
+}
+
+.mobile-nav {
+  display: none;
+  background: rgba($color-grey-1, 0.6);
+  padding: $default-padding;
+  transition: all 0.5s;
+
+  @include respond(phone) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+  &__button {
+    cursor: pointer;
+  }
+  &__checkbox:checked ~ &__button &__menu {
+    background-color: transparent;
+  }
+  &__checkbox:checked ~ &__button &__menu::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+  &__checkbox:checked ~ &__button &__menu::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}
+
+.mobile-nav__menu {
+  position: relative;
+  &,
+  &::before,
+  &::after {
+    width: 3rem;
+    height: 2px;
+    background-color: $color-primary;
+    display: inline-block;
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all 0.4s;
+  }
+
+  &::before {
+    top: -0.8rem;
+  }
+  &::after {
+    top: 0.8rem;
+  }
+}
+
+.unread {
+  position: absolute;
+  height: 1.5rem;
+  top: -0.3rem;
+  right: 0.2rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid $color-white;
+  background: $color-red;
+}
+.select {
+  &-box {
+    position: relative;
+  }
+  &-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: $color-grey-1;
+    padding: 0.5rem 0.8rem;
+    font-size: 1.4rem;
+    color: $color-black-1;
+    border-radius: 4px;
+  }
+  &-options {
+    display: none;
+    position: absolute;
+    top: 2.5rem;
+    left: -4rem;
+    background: $color-white;
+    border-radius: 5px;
+    width: 8rem;
+    box-shadow: 0 0.2rem 0.3rem rgba($color-black, 0.08);
+  }
+  &-option {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.8rem;
+    font-weight: 600;
+  }
+  &-option:not(:last-child) {
+    border-bottom: 1px solid $color-grey-1;
+  }
+  &-icon {
+    margin-left: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+  }
+}
+.balance-container {
+  display: flex;
+  margin: 4.5rem 0;
+  min-height: 17.5rem;
+}
+.balance {
+  &-box {
+    display: flex;
+    flex: 0 0 70%;
+    border-radius: 10px;
+    border: 1px solid $color-grey-3;
+    border-radius: 10px;
+    overflow: hidden;
+
+    @include respond(phone) {
+      flex: 1;
+    }
+
+    @include respond(mobile) {
+      flex-direction: column;
+    }
+
+    &-total {
+      display: flex;
+      flex: 0 0 60%;
+      flex-direction: column;
+      padding: 2.4rem 0 2.4rem 2.4rem;
+      @include respond(phone) {
+        padding-right: 2.4rem;
+      }
+    }
+    &-hold {
+      display: flex;
+      flex-direction: column;
+      background: $color-grey-1;
+      flex: 1;
+      padding: 2.4rem 2.4rem 2.4rem 0;
+      overflow: hidden;
+      @include respond(phone) {
+        padding-left: 2.4rem;
+      }
+    }
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2.5rem;
+    padding-bottom: 1.2rem;
+    height: 3rem;
+    border-bottom: 1px solid $color-grey-3;
+  }
+  &-text {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+
+  &-text--secondary {
+    color: $color-primary;
+  }
+  &-select {
+    font-family: inherit;
+    background: $color-grey-1;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem;
+  }
+
+  &-amount {
+    font-family: "Space Grotesk";
+    font-size: 3.6rem;
+    color: $color-black-1;
+    font-weight: 700;
+    line-height: 2;
+  }
+  &-amount--hold, &-text--hold{
+    padding-left: 2.4rem;
+  }
+  &-convert {
+    font-size: 1.8rem;
+    color: $color-grey-2;
+    font-weight: 400;
+  }
+}
