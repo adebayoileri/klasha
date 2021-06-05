@@ -1,4 +1,4 @@
-# Flutterwave Backend Engineer Technical assessment
+# Klasha Technical assessment
 
 ## Installation
 Clone the repo to your local machine 
